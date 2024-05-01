@@ -1,0 +1,47 @@
+
+n_cce: 32
+
+aggregation_level:
+  possible_values: [1, 2, 4, 8]
+  distribution_across_ues: [.25, .25, .25, .25]
+
+traffic_model:
+  is_full_buffer: False
+  avg_n_bits_per_slot: 5
+
+
+n_pdcch_candidates_per_al: {1: 5,
+                            2: 4,
+                            4: 3,
+                            8: 2,
+                           16: 0}
+
+n_slots: 300
+
+n_ues: 30
+
+n_re: 100
+
+pddch_opt_type: ['SoA', 'weight', 'weight/AL', 'weight/deg dynamic', 'Feige-Reichmann'] #['SoA', 'weight', 'weight/deg dynamic', 'Feige-Reichmann']  # 'GGWMIN',
+
+
+pdcch_correction_factor_per_al: [{}, {}, {}, {}, {}]
+#                        {1: 0.7894595452096543, 2: 0.8743681721832709, 4: 1.0910993470844068, 8: 1.7641984464284017}]
+#                        {1: 0.7894595452096543, 2: 0.8743681721832709, 4: 1.0910993470844068, 8: 1.4641984464284017},
+#                        {1: 0.4850563612514994, 2: 0.8571758254438359, 4: 1.442101321445991, 8: 2.0328842552335935},
+#                        {1: 0.6232845987942671, 2: 0.8940038997682601, 4: 1.175709025096332, 8: 1.6443603859729437}]
+
+opt_params: [{'M': 4}, {}, {}, {}, {}]  #[{'M': 6}, {}, {}, {}]
+
+td_scheduler:
+#  {'type': 'sortPF_cutoff_cce',  # 'sortPF_cutoff_ues', 'sortPF_cutoff_cce', 'sortPF_cutoff_re'
+#               'n_ues_cutoff': 30,
+#               'portion_cce_cutoff': 10,
+#               'portion_re_cutoff': 10}
+
+off_diagonal_prob_al: 0
+
+n_trials: 100
+
+filename_results: '../results/results_paper3.csv'
+#filename_results: '../results/test.csv'

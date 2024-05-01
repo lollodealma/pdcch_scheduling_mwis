@@ -1,0 +1,45 @@
+
+n_cce: 8
+
+aggregation_level:
+  possible_values: [1, 2, 4, 8]
+  distribution_across_ues: [.25, .3, .3, .15]
+
+traffic_model:
+  is_full_buffer: False
+  avg_n_bits_per_slot: 10
+
+
+n_pdcch_candidates_per_al: {1: 4,
+                            2: 4,
+                            4: 2,
+                            8: 1,
+                           16: 0}
+
+n_slots: 300
+
+n_ues: 6
+
+n_re: 100
+
+pddch_opt_type: ['weight', 'Feige-Reichmann']
+#                 'weight/AL', 'Feige-Reichmann', 'weight/E[deg]', 'weight', 'weight/deg static', 'GGWMIN'
+
+
+pdcch_correction_factor_per_al: [{}, {}]
+#                        {1: 0.7894595452096543, 2: 0.8743681721832709, 4: 1.0910993470844068, 8: 1.7641984464284017}]
+#                        {1: 0.7894595452096543, 2: 0.8743681721832709, 4: 1.0910993470844068, 8: 1.4641984464284017},
+#                        {1: 0.4850563612514994, 2: 0.8571758254438359, 4: 1.442101321445991, 8: 2.0328842552335935},
+#                        {1: 0.6232845987942671, 2: 0.8940038997682601, 4: 1.175709025096332, 8: 1.6443603859729437}]
+
+
+td_scheduler: {'type': 'sortPF_cutoff_cce',  # 'sortPF_cutoff_ues', 'sortPF_cutoff_cce', 'sortPF_cutoff_re'
+               'n_ues_cutoff': 20,
+               'portion_cce_cutoff': 3,
+               'portion_re_cutoff': 2}
+
+off_diagonal_prob_al: 0
+
+seed: [689, 24, 205, 521, 310, 819, 924, 681, 674, 580]
+
+filename_results: '../results/results_040923.csv'
